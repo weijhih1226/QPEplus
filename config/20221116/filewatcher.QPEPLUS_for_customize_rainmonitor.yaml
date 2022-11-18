@@ -1,0 +1,38 @@
+target_directory: /mnt2
+recursive_watch: Yes
+
+meta:
+  db_path: /pj/qpesums_filewatcher/var/filewatch_for_customize_rainmonitor.sqlite
+  duplicate_check_reserve_day: 3
+
+mixscan:
+  grow-interval: 10
+  backscan-interval: 600
+  maintain-scan-interval: 120
+
+monitored-subdirectory:
+  - qpesums_web_data/warning_grid
+  - nidsB/txt/thbwarning_grid/QPEGC_1H
+  - nidsB/txt/thbwarning_grid/QPF_1H
+  - nidsB/txt/warning_grid
+  - nidsB/txt/warning_grid/KHC
+  - qpesums_web_data/area_yaml
+
+
+periodical-scan:
+  scan_interval: 121
+  use_meta: True
+
+program_runner:
+  max_running_program: 4
+  # OR (notice: avoid conflict with default queue name "_DEFAULT")
+  queue:
+    - max_running_program: 2
+      name: merge_qpeqpf
+    - max_running_program: 1
+      name: add_gridmeta
+
+
+watching_entries_include:
+  # 在安裝目錄執行 filewatcher 主程式才能匯入相對路徑的檔案
+  - !include etc/fw.qplus/txt.customize_qpe_qpf.yaml

@@ -1,0 +1,93 @@
+- file_regex: ^thbwarning_grid_QPEGC_1H_[0-9]{8}\.[0-9]{4}\.txt$
+  path_regex: ^nidsB/txt/thbwarning_grid/QPEGC_1H$
+  process_as_uniqname: false
+  duplicate_check: True
+  operation:
+  - run_program:
+      command:
+      - /usr/bin/docker
+      - exec
+      - qpesums_web
+      - python
+      - manage.py
+      - merge_qpe_qpf_txt
+      - '%FILENAME%'
+      - --merge_outdirname
+      - /mnt2/qpesums_web_data/warning_grid
+      - --transform
+      queue: merge_qpeqpf
+
+- file_regex: ^thbwarning_grid_QPF_1H_[0-9]{8}\.[0-9]{4}\.txt$
+  path_regex: ^nidsB/txt/thbwarning_grid/QPF_1H$
+  process_as_uniqname: false
+  duplicate_check: True
+  operation:
+  - run_program:
+      command:
+      - /usr/bin/docker
+      - exec
+      - qpesums_web
+      - python
+      - manage.py
+      - merge_qpe_qpf_txt
+      - '%FILENAME%'
+      - --merge_outdirname
+      - /mnt2/qpesums_web_data/warning_grid
+      - --transform
+      queue: merge_qpeqpf
+
+# 新增 warning_area_code 流程
+# ex. /mnt2/qpesums_web_data/area_yaml/add_gridarea_meta_20220325.yaml
+- file_regex: ^add_gridarea_meta_[0-9]{12}\.yaml$
+  path_regex: ^qpesums_web_data/area_yaml$
+  process_as_uniqname: false
+  duplicate_check: True
+  operation:
+  - run_program:
+      command:
+      - /usr/bin/docker
+      - exec
+      - qpesums_web
+      - python
+      - manage.py
+      - insert_gridareameta
+      - '%FILENAME%'
+      queue: add_gridmeta
+
+- file_regex: ^thbwarning_grid_merge_[0-9]{8}\.[0-9]{4}\.txt$
+  path_regex: ^qpesums_web_data/warning_grid$
+  process_as_uniqname: false
+  duplicate_check: True
+  operation:
+  - run_program:
+      command:
+      - /usr/bin/docker
+      - exec
+      - qpesums_web
+      - python
+      - manage.py
+      - runscript
+      - insert_data_to_json_by_section
+      - --script-args
+      - '%FILENAME%'
+      - +t
+      - '261'
+
+- file_regex: ^KHC_flood_warning_grid_[0-9]{8}\.[0-9]{4}\.txt$
+  path_regex: ^nidsB/txt/warning_grid/KHC$
+  process_as_uniqname: false
+  duplicate_check: True
+  operation:
+  - run_program:
+      command:
+      - /usr/bin/docker
+      - exec
+      - qpesums_web
+      - python
+      - manage.py
+      - runscript
+      - insert_data_to_json_by_section
+      - --script-args
+      - '%FILENAME%'
+      - +t
+      - '278'
