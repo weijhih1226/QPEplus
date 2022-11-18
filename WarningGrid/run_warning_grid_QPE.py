@@ -1,10 +1,10 @@
 ########################################
 ####### run_warning_grid_QPE.py ########
 ######## Author: Wei-Jhih Chen #########
-########## Update: 2022/11/01 ##########
+########## Update: 2022/11/18 ##########
 ########################################
 
-import os , math , argparse
+import os , sys , math , argparse
 import numpy as np
 import read_radar as rr
 import pandas as pd
@@ -22,7 +22,7 @@ WORKROOT = PROJECTDIR/'WarningGrid'
 STATIC_DIR = WORKROOT/'static'
 SECINFO_DIR = STATIC_DIR/'secinfo'
 GRIDINFO_DIR = STATIC_DIR/'gridinfo'
-INDIR = PROJECTDIR/'data'
+INDIR = PROJECTDIR/'data'/'grid'
 OUTDIR = WORKROOT/'outdata'
 
 PRODUCT_DIR = lambda during: f'cb_rain{during:02d}h_rad_gc'
@@ -113,7 +113,33 @@ def outputMoreInfoWarningGrid(outPath , datetime , info , data):
             fo.write('    '.join(infoStr + dataStr) + '\n')
     print(f'Time: {dtdt.now()}, Output File: {outPath}, Mode: MORE')
 
-def main(secInfoDir , gridInfoDir , inDir , outDir , agencyName , areaType , outMore):
+def get_argument(command):
+    parser = argparse.ArgumentParser(prog = 'Output Warning Grids of QPE in Sections' , 
+                                     description = 'Output the maximum and average values of QPE within those sections \
+                                                    of certain area type which defined by given agency. You should input \
+                                                    2 arguments: the agency name & the area type; options with the directories \
+                                                    of grid- or section-information, input data, or output files, or verbose \
+                                                    mode. If you do not specify the directories, defaults would be used.')
+    parser.add_argument('agency' , help = 'the agency name')
+    parser.add_argument('area' , help = 'the area type')
+    parser.add_argument('-v' , '--verbose' , help = 'output products with more information of the sections' , action = 'store_true')
+    parser.add_argument('-s' , '--secinfo' , default = SECINFO_DIR , help = 'the directory of section-information files')
+    parser.add_argument('-g' , '--gridinfo' , default = GRIDINFO_DIR , help = 'the directory of grid-information files')
+    parser.add_argument('-i' , '--input' , default = INDIR , help = 'the directory of input data files')
+    parser.add_argument('-o' , '--output' , default = OUTDIR , help = 'the directory of output files')
+    parsed_arg = parser.parse_args(command[1:])
+    return parsed_arg
+
+def main(argv):
+    parsed_arg = get_argument(argv)
+    secInfoDir = parsed_arg.secinfo
+    gridInfoDir = parsed_arg.gridinfo
+    inDir = parsed_arg.input
+    outDir = parsed_arg.output
+    agencyName = parsed_arg.agency
+    areaType = parsed_arg.area
+    outMore = parsed_arg.verbose
+
     secInfoDir = Path(secInfoDir)
     gridInfoDir = Path(gridInfoDir)
     outDir = Path(outDir)/Path(agencyName)
@@ -166,19 +192,4 @@ def main(secInfoDir , gridInfoDir , inDir , outDir , agencyName , areaType , out
         outputWarningGrid(outPath , datetime , secInfo , secData)
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(prog = 'Output Warning Grids of QPE in Sections' , 
-                                     description = 'Output the maximum and average values of QPE within those sections \
-                                                    of certain area type which defined by given agency. You should input \
-                                                    2 arguments: the agency name & the area type; options with the directories \
-                                                    of grid- or section-information, input data, or output files, or verbose \
-                                                    mode. If you do not specify the directories, defaults would be used.')
-    parser.add_argument('agency' , help = 'the agency name')
-    parser.add_argument('area' , help = 'the area type')
-    parser.add_argument('-v' , '--verbose' , help = 'output products with more information of the sections' , action = 'store_true')
-    parser.add_argument('-s' , '--secinfo' , default = SECINFO_DIR , help = 'the directory of section-information files')
-    parser.add_argument('-g' , '--gridinfo' , default = GRIDINFO_DIR , help = 'the directory of grid-information files')
-    parser.add_argument('-i' , '--input' , default = INDIR , help = 'the directory of input data files')
-    parser.add_argument('-o' , '--output' , default = OUTDIR , help = 'the directory of output files')
-    args = parser.parse_args()
-
-    main(args.secinfo , args.gridinfo , args.input , args.output , args.agency , args.area , args.verbose)
+    main(sys.argv)
