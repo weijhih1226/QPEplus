@@ -35,7 +35,7 @@ def merge(gdf , infos):
         gdf[title] = contents
     return gdf
 
-def write_secinfo(outPath , gdf , secID_head , secName_title , secInfo_title):
+def to_secinfo(gdf , secID_head , secName_title , secInfo_title):
     df = {}
     df['Section_ID'] = [secID_head + f'{cnt_i + 1:03d}' for cnt_i in range(len(gdf))]
     df['Section_Name'] = gdf[secName_title]
@@ -43,7 +43,10 @@ def write_secinfo(outPath , gdf , secID_head , secName_title , secInfo_title):
     infoOut_title = list(secInfo_title.values())
     for cnt_df in range(len(secInfo_title)):
         df[infoOut_title[cnt_df]] = gdf[infoIn_title[cnt_df]]
+    return df
 
+def write_secinfo(outPath , gdf , secID_head , secName_title , secInfo_title):
+    df = to_secinfo(gdf , secID_head , secName_title , secInfo_title)
     pd.DataFrame(df).to_csv(outPath , index = False)
 
 def main():
