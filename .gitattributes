@@ -1,4 +1,4 @@
-*.geojson filter=lfs diff=lfs merge=lfs -text
-*.fua filter=lfs diff=lfs merge=lfs -text
-*.fsf filter=lfs diff=lfs merge=lfs -text
-wrfout_* filter=lfs diff=lfs merge=lfs -text
+# *.geojson filter=lfs diff=lfs merge=lfs -text
+# *.fua filter=lfs diff=lfs merge=lfs -text
+# *.fsf filter=lfs diff=lfs merge=lfs -text
+# wrfout_* filter=lfs diff=lfs merge=lfs -text
