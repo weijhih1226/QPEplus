@@ -1,0 +1,4 @@
+*.geojson
+*.fua
+*.fsf
+wrfout_*
