@@ -225,4 +225,10 @@ $ systemctl status qpeplus.filewatcher@"*".service --lines=0
     ```
     查詢結果：API資料沒問題。
 
+## 2023/01/05、2023/01/30
+### 台鐵版土石流潛勢溪流燈號異常
+
+- /data/qpesums_web_data/tramudslide/latest_file/latest_tramudslide.json - 最新土石流燈號警示ID
+- /mnt2/data/QPESUMS/xml/swcb_xml/XXXX_Close.xml - 傳送燈號警示ID(XXXX) XML檔至該目錄下，以關閉該燈號
+
 ---
