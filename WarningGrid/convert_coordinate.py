@@ -24,7 +24,7 @@ inFilename = '風險值20橋梁_集水區_合併'
 outProj = 'TWD67'
 outExt = 'shp'
 
-homeDir = Path(r'C:\Users\wjchen\Documents\Tools\shp')
+homeDir = Path(r'C:\Users\wjchen\Documents\QPEplus\shp')
 inPath = homeDir/inDir/f'{inAgency}_{inType}'/f'{inFilename}.shp'
 outDir = homeDir/outProj/inDir/f'{inAgency}_{inType}'
 outPath = outDir/f'{inFilename}.{outExt}'

@@ -1,7 +1,7 @@
 ########################################
 ####### run_warning_grid_QPE.py ########
 ######## Author: Wei-Jhih Chen #########
-########## Update: 2022/11/18 ##########
+########## Update: 2022/12/06 ##########
 ########################################
 
 import os , sys , math , argparse
@@ -184,12 +184,12 @@ def main(argv):
     
     ########## Output ##########
     if outMore:
-        secInfo = secInfo[infoTitle.keys()]
-        secInfo.rename(columns = infoTitle , inplace = True)
-        outputMoreInfoWarningGrid(outPath , datetime , secInfo , secData)
+        secInfoIn = secInfo[infoTitle.keys()]
+        secInfoIn = secInfoIn.rename(columns = infoTitle)
+        outputMoreInfoWarningGrid(outPath , datetime , secInfoIn , secData)
     else:
-        secInfo = secInfo[['Section_Name' , 'Section_ID']]
-        outputWarningGrid(outPath , datetime , secInfo , secData)
+        secInfoIn = secInfo[['Section_Name' , 'Section_ID']]
+        outputWarningGrid(outPath , datetime , secInfoIn , secData)
 
 if __name__ == '__main__':
     main(sys.argv)

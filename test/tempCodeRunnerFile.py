@@ -1,1 +1,0 @@
-y.fill(np.nan)

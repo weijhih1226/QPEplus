@@ -65,8 +65,8 @@ def main():
     inFile = '風險值20橋梁_集水區_合併.shp'
     secID_head = agencyName + areaType_abbr
 
-    homeDir = Path(r'C:\Users\wjchen\Documents\Tools\QPEplus\WarningGrid')
-    inDir = homeDir.parent.parent/'shp'/'TWD67'/'Agency'/f'{agencyName}_{areaType}'
+    homeDir = Path(r'C:\Users\wjchen\Documents\QPEplus\WarningGrid')
+    inDir = homeDir.parent/'shp'/'TWD67'/'Agency'/f'{agencyName}_{areaType}'
     outDir = homeDir/'static'/'secinfo'
     inPath = inDir/f'{inFile}'
     outPath = outDir/f'{agencyName}_{areaType}_secinfo.csv'
