@@ -22,6 +22,9 @@ date: 2022/10/13
  - 61.56.11.90
  - 61.56.11.91
 
+### 備份還原主機
+ - 61.56.11.203
+
 ### 測試機 (201)
  - 61.56.11.201
 
@@ -72,6 +75,11 @@ date: 2022/10/13
  - airforce_match_list_cp@211020.timer
  - TAHOPE_match_list_cp@211026.timer
  - send_product_match_list_cp@210924.timer
+
+Systemd服務設定檔在/etc/systemd/system/目錄下，子服務設定檔對應：
+- qpeplus.filewatcher@.service - /pj/qpesums_filewatcher/etc/
+- qpeplus.send_product@.service - /pj/send_product/etc/
+- qpeplus.send_product.x@.service - /pj/send_product/etc/
 
 ## 其它
  - backend (fastapi)
@@ -141,6 +149,10 @@ OPTIONS:
 
 ### 查看Systemd服務輸出logs
 ```console
+$ sudo systemctl list-units qpeplus'*'  # 列出QPEplus服務
+```
+
+```console
 $ journalctl [OPTIONS...] [MATCHES...]
 Flag:
  -u | --unit [Systemd服務名稱]  # 顯示特定服務單位log
@@ -155,6 +167,11 @@ $ journalctl -u [Systemd服務名稱] -f
 查看所有filewatcher服務：
 ```console
 $ systemctl status qpeplus.filewatcher@"*".service --lines=0
+```
+
+### 更改admin密碼
+```
+$ python manage.py changepassword admin
 ```
 
 # 補充資料
@@ -230,5 +247,17 @@ $ systemctl status qpeplus.filewatcher@"*".service --lines=0
 
 - /data/qpesums_web_data/tramudslide/latest_file/latest_tramudslide.json - 最新土石流燈號警示ID
 - /mnt2/data/QPESUMS/xml/swcb_xml/XXXX_Close.xml - 傳送燈號警示ID(XXXX) XML檔至該目錄下，以關閉該燈號
+
+## 2023/02/07
+### M6(11.61、11.48)、N6(11.39、11.47)機櫃網路交換器韌體更新
+
+拔NAS(11.47、11.48)網路接頭，導致DMZ與NAS間資料傳輸錯誤。
+
+- 先確定/etc/fstab中有11.47、11.48目錄mount資訊。
+
+```bash
+$ umount -f <path>  # 解除mount目錄
+$ mount -a          # 依/etc/fstab內容mount上
+```
 
 ---
