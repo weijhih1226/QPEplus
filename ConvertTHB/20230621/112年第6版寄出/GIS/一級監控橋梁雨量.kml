@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>一級監控橋梁雨量.kmz</name>
+	<visibility>0</visibility>
+	<open>1</open>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl1</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="m_ylw-pushpin0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="m_ylw-pushpin01">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin1</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl01</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="m_ylw-pushpin00">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin100</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl20</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="m_ylw-pushpin10">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin10</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl10</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="m_ylw-pushpin11">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin00</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl00</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="m_ylw-pushpin2">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin2</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="m_ylw-pushpin4">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin30</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl2</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin0">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin00">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin1">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin10">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin100">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin2">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin30">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl0">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl1">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl01">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl00">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl10">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl2">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl20">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Folder>
+		<name>一級監控橋梁雨量</name>
+		<visibility>0</visibility>
+		<open>1</open>
+		<Folder>
+			<name>一級監控橋梁雨量_101_台2線龍門橋
+(98K+164)</name>
+			<visibility>0</visibility>
+			<Placemark>
+				<name>一級監控橋梁雨量_101_台2線龍門橋
+(98K+164)</name>
+				<visibility>0</visibility>
+				<Camera>
+					<longitude>121.9232184679289</longitude>
+					<latitude>25.01949523071057</latitude>
+					<altitude>893.990449698003</altitude>
+					<heading>22.12550929921794</heading>
+					<tilt>33.60123863359331</tilt>
+					<roll>0.6172371643034892</roll>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</Camera>
+				<styleUrl>#m_ylw-pushpin11</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>121.9272244821014,25.02771913913974,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>一級監控橋梁雨量_101_台2線龍門橋
+(98K+164)</name>
+				<visibility>0</visibility>
+				<styleUrl>#m_ylw-pushpin00</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+						121.9271833489885,25.02765173664335,0 121.9269241303173,25.02717073169209,0 121.9267005207579,25.02665382899907,0 121.92652535117,25.02588661931346,0 121.9264100100712,25.02516197651033,0 121.9263546141215,25.02472775429036,0 121.9266577943912,25.02435013576554,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>一級監控橋梁雨量_201_台61線中彰大橋
+(160K+545~163K+287)</name>
+			<visibility>0</visibility>
+			<Placemark>
+				<name>一級監控橋梁雨量_201_台61線中彰大橋
+(160K+545~163K+287)</name>
+				<visibility>0</visibility>
+				<LookAt>
+					<longitude>120.4686272343497</longitude>
+					<latitude>24.16512456909816</latitude>
+					<altitude>0</altitude>
+					<heading>-0.1967343681941032</heading>
+					<tilt>16.257724170693</tilt>
+					<range>1776.30478919513</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#m_ylw-pushpin10</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>120.4707605226308,24.16873120078028,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>一級監控橋梁雨量_201_台61線中彰大橋
+(160K+545~163K+287)</name>
+				<visibility>0</visibility>
+				<styleUrl>#m_ylw-pushpin2</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+						120.4707194753909,24.16873090257579,0 120.4700725721044,24.16801573176859,0 120.4693432523271,24.16725776966094,0 120.4676227214474,24.16526418932401,0 120.4668279366235,24.16430381897368,0 120.4647701962952,24.16178518051683,0 120.4633351812078,24.16036504816385,0 120.4617719121891,24.15949328402065,0 120.4600712335696,24.1584027084011,0 120.4583465454472,24.15635227715527,0 120.4562139384841,24.15375557647258,0 120.4549802480339,24.15209567864125,0 120.4536057918374,24.150338227816,0 120.4528935341059,24.14951059124785,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>一級監控橋梁雨量_202_台14線炎峰橋
+(26K+710~27K+165)</name>
+			<visibility>0</visibility>
+			<Placemark>
+				<name>一級監控橋梁雨量_202_台14線炎峰橋
+(26K+710~27K+165)</name>
+				<visibility>0</visibility>
+				<LookAt>
+					<longitude>120.7573854421848</longitude>
+					<latitude>23.9846916180592</latitude>
+					<altitude>0</altitude>
+					<heading>-0.155662350225384</heading>
+					<tilt>29.35231678959066</tilt>
+					<range>1243.468991066196</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#m_ylw-pushpin10</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>120.7527570560429,23.98206748185823,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>一級監控橋梁雨量_202_台14線炎峰橋
+(26K+710~27K+165)</name>
+				<visibility>0</visibility>
+				<styleUrl>#m_ylw-pushpin2</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+						120.7533692499672,23.98217201297878,0 120.7542658232881,23.98254117130961,0 120.7549551063056,23.9830978439209,0 120.7555638224645,23.98351814094245,0 120.7566231827846,23.98418998549612,0 120.7575545654684,23.98485208292353,0 120.7585786361941,23.98544644991349,0 120.7596131862287,23.98608798357513,0 120.760662277106,23.98643344910409,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>一級監控橋梁雨量_203_台14線長壽橋
+(46K+084~46K+324)</name>
+			<visibility>0</visibility>
+			<Placemark>
+				<name>一級監控橋梁雨量_203_台14線長壽橋
+(46K+084~46K+324)</name>
+				<visibility>0</visibility>
+				<LookAt>
+					<longitude>120.8811299115394</longitude>
+					<latitude>23.98445972568911</latitude>
+					<altitude>0</altitude>
+					<heading>-0.1727824179998018</heading>
+					<tilt>49.62849547960022</tilt>
+					<range>1539.592585224308</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#m_ylw-pushpin10</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>120.8786273214211,23.98243750562887,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>一級監控橋梁雨量_203_台14線長壽橋
+(46K+084~46K+324)</name>
+				<visibility>0</visibility>
+				<styleUrl>#m_ylw-pushpin2</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+						120.8779705281272,23.98260864523534,0 120.8785725547675,23.98249540096432,0 120.8791196341016,23.98236547332468,0 120.8798578925875,23.98234065784587,0 120.8804936906958,23.98231636658742,0 120.88109436504,23.98245960462259,0 120.8817098145449,23.98258645432698,0 120.8825226671938,23.98288077410085,0 120.88289904124,23.98306677772968,0 120.8832959661718,23.98326568863735,0 120.8834130900554,23.98338087223773,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>一級監控橋梁雨量_204_台7甲線張良橋
+(49K+341~49K+387)</name>
+			<visibility>0</visibility>
+			<Placemark>
+				<name>一級監控橋梁雨量_204_台7甲線張良橋
+(49K+341~49K+387)</name>
+				<visibility>0</visibility>
+				<LookAt>
+					<longitude>121.3399058812321</longitude>
+					<latitude>24.37223271918051</latitude>
+					<altitude>0</altitude>
+					<heading>24.94197340184431</heading>
+					<tilt>57.78056008956229</tilt>
+					<range>322.2621628367424</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#m_ylw-pushpin10</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>121.3394702423481,24.37318589316141,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>一級監控橋梁雨量_204_台7甲線張良橋
+(49K+341~49K+387)</name>
+				<visibility>0</visibility>
+				<styleUrl>#m_ylw-pushpin2</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+						121.3394539325397,24.37317867515124,0 121.339562656178,24.37313817128464,0 121.3397326854996,24.37292751426212,0 121.3398515292368,24.37274005380499,0 121.3398207749282,24.37265623550935,0 121.3398501388957,24.37247537106944,0 121.3398664202844,24.37233767407514,0 121.3399127168572,24.37218737796508,0 121.3399635828006,24.37209891637063,0 121.3399473114474,24.37203691730737,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>一級監控橋梁雨量_205_台21線隆華新橋
+(104K+461~105K+000)</name>
+			<visibility>0</visibility>
+			<Placemark>
+				<name>一級監控橋梁雨量_205_台21線隆華新橋
+(104K+461~105K+000)</name>
+				<visibility>0</visibility>
+				<LookAt>
+					<longitude>120.8778596285663</longitude>
+					<latitude>23.57684419382725</latitude>
+					<altitude>0</altitude>
+					<heading>0.001042368918744268</heading>
+					<tilt>56.65575544209371</tilt>
+					<range>572.8404914929421</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#m_ylw-pushpin01</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>120.8773237389145,23.57588441737181,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>一級監控橋梁雨量_205_台21線隆華新橋
+(104K+461~105K+000)</name>
+				<visibility>0</visibility>
+				<styleUrl>#m_ylw-pushpin4</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+						120.8773103903598,23.57587663358282,0 120.8767190046561,23.57515596092595,0 120.8757913876471,23.57391650934564,0 120.8752213002903,23.57310570415272,0 120.874860941852,23.57268926002072,0 120.8744198510975,23.57237092585803,0 120.8740136520681,23.57219364185624,0 120.8737472783272,23.57201583249041,0 120.8736029046781,23.5718153862224,0 120.8734703510919,23.57163729828893,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>一級監控橋梁雨量_206_台21線松泉橋
+(107K+223~107K+784)</name>
+			<visibility>0</visibility>
+			<Placemark>
+				<name>一級監控橋梁雨量_206_台21線松泉橋
+(107K+223~107K+784)</name>
+				<visibility>0</visibility>
+				<LookAt>
+					<longitude>120.8662582474455</longitude>
+					<latitude>23.55495511428616</latitude>
+					<altitude>0</altitude>
+					<heading>-0.0007009841528877874</heading>
+					<tilt>58.84948671052872</tilt>
+					<range>752.1705582134975</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#m_ylw-pushpin01</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>120.8643596016585,23.55491322104079,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>一級監控橋梁雨量_206_台21線松泉橋
+(107K+223~107K+784)</name>
+				<visibility>0</visibility>
+				<styleUrl>#m_ylw-pushpin4</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+						120.8644436596694,23.55488772304703,0 120.8638808027264,23.55431262764883,0 120.8636055591158,23.55369536162381,0 120.8636437780135,23.55337892103998,0 120.8638148103421,23.5528669409889,0 120.8640808972545,23.55238657695907,0 120.8643192570465,23.55187753582688,0 120.8641963024357,23.55123989549845,0 120.8639758369412,23.55088108040751,0 120.863898620751,23.5507610639366,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>一級監控橋梁雨量_207_台21線愛玉橋
+(108K+272~108K+689)</name>
+			<visibility>0</visibility>
+			<Placemark>
+				<name>一級監控橋梁雨量_207_台21線愛玉橋
+(108K+272~108K+689)</name>
+				<visibility>0</visibility>
+				<LookAt>
+					<longitude>120.8646762295975</longitude>
+					<latitude>23.5465462305586</latitude>
+					<altitude>0</altitude>
+					<heading>158.2800243648716</heading>
+					<tilt>59.05164393751983</tilt>
+					<range>314.6076321531879</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#m_ylw-pushpin01</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>120.8647687635417,23.54639173528239,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>一級監控橋梁雨量_207_台21線愛玉橋
+(108K+272~108K+689)</name>
+				<visibility>0</visibility>
+				<styleUrl>#m_ylw-pushpin4</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+						120.8644179490682,23.54677561882522,0 120.8647724629837,23.54640151953407,0 120.8652788580328,23.54617799031672,0 120.8660229789306,23.54624783996247,0 120.86635684486,23.54647392840627,0 120.86671504885,23.54685766872258,0 120.8668373654261,23.54729944681871,0 120.8668265815332,23.54760951744069,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>一級監控橋梁雨量_208_台21線單及娜橋
+(111K+498~111K+873)</name>
+			<visibility>0</visibility>
+			<Placemark>
+				<name>一級監控橋梁雨量_208_台21線單及娜橋
+(111K+498~111K+873)</name>
+				<visibility>0</visibility>
+				<LookAt>
+					<longitude>120.882669709293</longitude>
+					<latitude>23.55718287826523</latitude>
+					<altitude>0</altitude>
+					<heading>158.3039561037933</heading>
+					<tilt>59.44899195305398</tilt>
+					<range>458.8038112314461</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#m_ylw-pushpin01</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>120.8820591311747,23.55783418358164,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>一級監控橋梁雨量_208_台21線單及娜橋
+(111K+498~111K+873)</name>
+				<visibility>0</visibility>
+				<styleUrl>#m_ylw-pushpin4</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+						120.8821282498425,23.55779150681749,0 120.8826688273064,23.55762980517279,0 120.8832829697505,23.55754897018544,0 120.8838519911514,23.55777054673067,0 120.8841847397455,23.55819783676446,0 120.8841082215058,23.55871647491484,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>一級監控橋梁雨量_501_台1線八掌溪橋
+(277K+639~277K+
+943)</name>
+			<visibility>0</visibility>
+			<Placemark>
+				<name>一級監控橋梁雨量_501_台1線八掌溪橋
+(277K+639~277K+
+943)</name>
+				<visibility>0</visibility>
+				<LookAt>
+					<longitude>120.3833562365555</longitude>
+					<latitude>23.40569459164402</latitude>
+					<altitude>0</altitude>
+					<heading>32.62482775241456</heading>
+					<tilt>30.00199961462639</tilt>
+					<range>445.201066134544</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#m_ylw-pushpin01</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>120.3827868177158,23.40563014331836,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>一級監控橋梁雨量_501_台1線八掌溪橋
+(277K+639~277K+
+943)</name>
+				<visibility>0</visibility>
+				<styleUrl>#m_ylw-pushpin4</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+						120.3827168244603,23.40561681714776,0 120.3817673990216,23.40255891815157,0 120.3816272401203,23.40214664447711,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>一級監控橋梁雨量_502_台1丁線新榮橋(3K+720)</name>
+			<visibility>0</visibility>
+			<Placemark>
+				<name>一級監控橋梁雨量_502_台1丁線新榮橋(3K+720)</name>
+				<visibility>0</visibility>
+				<Camera>
+					<longitude>120.5195957203241</longitude>
+					<latitude>23.72825354063978</latitude>
+					<altitude>936.1660843315138</altitude>
+					<heading>-0.3162189411557397</heading>
+					<tilt>27.23048868292032</tilt>
+					<roll>-0.5445943468867266</roll>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</Camera>
+				<styleUrl>#m_ylw-pushpin0</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>120.519404737144,23.73132124140118,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>一級監控橋梁雨量_502_台1丁線新榮橋(3K+720)</name>
+				<visibility>0</visibility>
+				<styleUrl>#m_ylw-pushpin</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+						120.5200027423531,23.73064823323397,0 120.5181778985921,23.73281197529869,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+		</Folder>
+	</Folder>
+</Document>
+</kml>
