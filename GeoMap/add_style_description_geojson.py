@@ -1,7 +1,7 @@
 ########################################
 ### add_style_description_geojson.py ###
 ######## Author: Wei-Jhih Chen #########
-########## Update: 2023/03/29 ##########
+########## Update: 2023/04/10 ##########
 ########################################
 
 import os
@@ -11,6 +11,7 @@ import json
 from typing import Optional
 from pathlib import Path
 from pydantic.main import BaseModel
+from copy import deepcopy as dc
 
 STYLES = {
     'color_line': '#ff0000' ,
@@ -38,27 +39,73 @@ INDIR = HOMEDIR/'geojson'/'Agency'/'SWCB_collapse'
 INPATH = INDIR/INFILE
 OUTPATH = INDIR/INFILE
 
-def load_json(path):
+def load_json(path: str) -> dict:
+    '''
+    Load JSON file and return data.
+
+    Parameters
+    ----------
+    path : str
+        The file path.
+
+    Returns
+    -------
+    data : dict
+        The data read from file.
+    '''
     with open(path , encoding = 'UTF-8') as f:
         data = json.load(f)
     return data
 
 
-def save_json(path , data):
+def save_json(path: str , data: dict):
+    '''
+    Save JSON data to file.
+
+    Parameters
+    ----------
+    path : str
+        The file path.
+    data : dict
+        The dict data.
+    '''
     with open(path , 'w' , encoding = 'UTF-8' , newline = '') as f:
         json.dump(data , f)
 
 
-def add_feature_styles(data , styles):
+def add_feature_styles(data: dict , styles: dict) -> dict:
+    '''
+    Add feature styles to JSON data.
+
+    Parameters
+    ----------
+    data : dict
+        The JSON data.
+    styles : dict
+        The feature styles.
+
+    Returns
+    -------
+    data : dict
+        The data added feature styles.
+    '''
     for cnt_f , feature in enumerate(data['features']):
         type = feature['type']
         properties = feature['properties']
         geometry = feature['geometry']
+        geometry_type = geometry['type']
         data['features'][cnt_f] = {}
         data['features'][cnt_f]['type'] = type
         if styles:
             for style in styles:
                 data['features'][cnt_f][style] = styles[style]
+        if geometry_type == 'Point':
+            data['features'][cnt_f]['marker-icon'] = 'notification_important'
+            data['features'][cnt_f]['marker-type'] = 'icon_circle_marker'
+            data['features'][cnt_f]['marker-size'] = 'medium'
+            data['features'][cnt_f]['marker-opacity'] = '1'
+            data['features'][cnt_f]['marker-color'] = 'transparent'
+            data['features'][cnt_f]['marker-border'] = False
         data['features'][cnt_f]['properties'] = properties
         data['features'][cnt_f]['geometry'] = geometry
     return data
@@ -84,27 +131,27 @@ def add_feature_description_SWCB(data , properties , title_key: str = None):
         for key in properties:
             if key == 'Warn_type':
                 if feature['properties'][key] == 1:
-                    type = '第1類型(同土石流一併發布)'
+                    warn_type = '第1類型(同土石流一併發布)'
                 elif feature['properties'][key] == 2:
-                    type = '第2類型(單獨發布)'
+                    warn_type = '第2類型(單獨發布)'
                 else:
-                    type = '未分類'
+                    warn_type = '未分類'
                 idx = feature['properties']['description'].find('</tbody>')
                 tbody_text += \
                     "<tr>" + \
                         f"<td align=center bgcolor=#000 width=\"1000px\"><font color=#fff><b>{properties[key]}</b></font></td>" + \
-                        f"<td align=left width=\"1000px\">{type}</td>" + \
+                        f"<td align=left width=\"1000px\">{warn_type}</td>" + \
                     "</tr>"
             else:
                 if feature['properties'][key] is None:
-                    value = "無"
+                    warn_value = "無"
                 else:
-                    value = feature['properties'][key]
+                    warn_value = feature['properties'][key]
                 idx = feature['properties']['description'].find('</tbody>')
                 tbody_text += \
                     "<tr>" + \
                         f"<td align=center bgcolor=#000 width=\"1000px\"><font color=#fff><b>{properties[key]}</b></font></td>" + \
-                        f"<td align=left width=\"1000px\">{value}</td>" + \
+                        f"<td align=left width=\"1000px\">{warn_value}</td>" + \
                     "</tr>"
         
         idx = feature['properties']['description'].find('</table>')
@@ -119,7 +166,49 @@ def add_feature_description_SWCB(data , properties , title_key: str = None):
     return data
 
 
+def add_feature_description(data , properties , title_key: str = None):
+    for feature in data['features']:
+        feature['properties']['description'] = \
+            f"<table align=center border=1 cellpadding=2 cellspacing=0 style=\"white-space:nowrap\" FONT-SIZE:\"12px\"></table>"
+
+        thead_text = ""
+        tbody_text = ""
+
+        idx = feature['properties']['description'].find('</table>')
+        title = feature['properties'][title_key] if title_key else feature['properties']['name']
+        thead_text += \
+            "<thead>" + \
+                "<tr width=\"2000px\">" + \
+                    f"<th align=center bgcolor=#ffcc00 colspan=2>{title}</th>" + \
+                "</tr>" + \
+            "</thead><tbody></tbody>"
+                
+        for key in properties:
+            if feature['properties'][key] is None:
+                value = "無"
+            else:
+                value = feature['properties'][key]
+            idx = feature['properties']['description'].find('</tbody>')
+            tbody_text += \
+                "<tr>" + \
+                    f"<td align=center bgcolor=#000 width=\"1000px\"><font color=#fff><b>{properties[key]}</b></font></td>" + \
+                    f"<td align=left width=\"1000px\">{value}</td>" + \
+                "</tr>"
+        
+        idx = feature['properties']['description'].find('</table>')
+        feature['properties']['description'] = feature['properties']['description'][:idx] + \
+            thead_text + \
+        feature['properties']['description'][idx:]
+
+        idx = feature['properties']['description'].find('</tbody>')
+        feature['properties']['description'] = feature['properties']['description'][:idx] + \
+            tbody_text + \
+        feature['properties']['description'][idx:]
+    return data
+
+
 def update_feature_properties(data , properties , title_key = None):
+    properties_tmp = dc(properties)
     if not title_key: title_key = 'name'
     for cnt , feature in enumerate(data['features']):
         try:
@@ -128,12 +217,13 @@ def update_feature_properties(data , properties , title_key = None):
             title = f'{cnt:03d}'
             print(f"No title key: '{title_key}', default title: {title}")
         
-        for property in properties:
-            properties[property] = feature['properties'][property]
+        for property in properties_tmp:
+            properties_tmp[property] = feature['properties'][property]
+
         feature['properties'] = {}
         feature['properties']['name'] = title
-        for property in properties:
-            feature['properties'][property] = properties[property]
+        for property in properties_tmp:
+            feature['properties'][property] = properties_tmp[property]
     return data
 
 
@@ -190,7 +280,8 @@ def main(sysargv = None):
         if update_properties:
             data = update_feature_properties(data , update_properties , title_key = title_key)
             if add_description:
-                data = add_feature_description_SWCB(data , update_properties)
+                data = add_feature_description(data , update_properties)
+                # data = add_feature_description_SWCB(data , update_properties)
         data = add_feature_styles(data , add_styles)
         save_json(output , data)
             
@@ -198,7 +289,8 @@ def main(sysargv = None):
         print('I/O Error:' , f)
     except json.decoder.JSONDecodeError:
         print('JSON Decode Error!')
-
+    except Exception as ex:
+        print(f'Exception: {ex}!')
 
 if __name__ == '__main__':
    main(sys.argv)
