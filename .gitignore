@@ -1,5 +1,9 @@
+geojson
+shp
 *.geojson
 *.json
 *.fua
 *.fsf
+*.kmz
+*.kml
 wrfout_*
