@@ -1,0 +1,5 @@
+Warning from maximum data in warning area
+Time: 20220510.0700
+datatype	warning_area	range<5km	range<10km
+QPEGC_1H	2.75000000	5.00000000	9.50000000
+QPF_1H	0.10000000	10.60000000	23.50000000
