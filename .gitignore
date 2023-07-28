@@ -4,6 +4,7 @@ geojson
 shp
 
 # Files
+*.pyc
 *.geojson
 *.json
 *.fua
